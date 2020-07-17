@@ -1,2 +1,7 @@
 # docker-fun
 Course stuff
+
+
+## Time used:
+### Part 1
+1-4: 2h +
