@@ -80,6 +80,8 @@ Searching..
 
 # Exercise 1.6
 
+Dockerfile: ./exec-1.6/Dockerfile
+
 ```bash
 (base) Keisarinna:exec-1.6 annaluhtakanta$ docker build -t docker-clock .
 Sending build context to Docker daemon  2.048kB
