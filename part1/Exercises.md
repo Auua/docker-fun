@@ -80,7 +80,7 @@ Searching..
 
 # Exercise 1.6
 
-Dockerfile: ./exec-1.6/Dockerfile
+Dockerfile: [./exec-1.6/Dockerfile](./exec-1.6/Dockerfile)
 
 ```bash
 (base) $ docker build -t docker-clock .
@@ -102,6 +102,8 @@ Successfully tagged docker-clock:latest
 ```
 
 # Exercise 1.7.
+
+Dockerfile: [./exec-1.7/Dockerfile](./exec-1.7/Dockerfile)
 
 ```bash
 (base)$ docker build -t curler .
@@ -197,11 +199,11 @@ e76a295bed4bcb54919b1b6fed2819b3f58b8c27032c385985c8b86ef0152e91
 
 # Exercise 1.10
 
-Dockerfile: ./exec-1.10/Dockerfile
+Dockerfile: [./exec-1.10/Dockerfile](./exec-1.10/Dockerfile)
 
 # Exercise 1.11
 
-Dockerfile: ./exec-1.11/Dockerfile
+Dockerfile: [./exec-1.11/Dockerfile](./exec-1.11/Dockerfile)
 
 
 ```bash
@@ -237,7 +239,7 @@ Started on port 8000
 
 # Exercise 1.12
 
-Dockerfiles: ./exec-1.12/Dockerfile & Dockerfile-back
+Dockerfiles: [./exec-1.12/Dockerfile](./exec-1.12/Dockerfile) && [./exec-1.12/Dockerfile-back](./exec-1.12/Dockerfile-back) 
 
 ![Image of exercise 1.12](exec-1.12/pic-1.12.png)
 
@@ -488,7 +490,7 @@ Successfully tagged javadoc:latest
 
 # Exercise 1.14
 
-Dockerfiles: ./exec-1.14/Dockerfile & Dockerfile-back
+Dockerfiles: [./exec-1.14/Dockerfile](./exec-1.14/Dockerfile) && [./exec-1.14/Dockerfile-back](./exec-1.14/Dockerfile-back)
 
 ![Image of exercise 1.14](exec-1.14/pic-1.14.png)
 

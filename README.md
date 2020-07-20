@@ -8,3 +8,6 @@ Course stuff
 5-6: 1h
 7-12: 4h
 13-16: 3h 
+
+
+### Part 2
