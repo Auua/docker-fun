@@ -425,3 +425,138 @@ Working!
 
 
 # Exercise 1.13
+
+![Image of exercise 1.13](exec-1.13/pic-1.13.png)
+
+```bash
+
+base) $ docker build -t javadoc .
+Sending build context to Docker daemon  107.5kB
+Step 1/6 : FROM openjdk:8
+8: Pulling from library/openjdk
+e9afc4f90ab0: Already exists 
+989e6b19a265: Already exists 
+af14b6c2f878: Already exists 
+5573c4b30949: Already exists 
+fb1a405f128d: Pull complete 
+197b0f525c26: Pull complete 
+35daf494cd0f: Pull complete 
+Digest: sha256:3867335e47b448b63c5329e0f5c762368f19fca9af8c1d957fa2bf7d63fe0829
+Status: Downloaded newer image for openjdk:8
+ ---> 51d6b33ebe8a
+Step 2/6 : COPY . /usr/src/myapp
+ ---> a932a49b12db
+Step 3/6 : WORKDIR /usr/src/myapp
+ ---> Running in ceb4690b1718
+Removing intermediate container ceb4690b1718
+ ---> a5b9936a7ed6
+Step 4/6 : RUN ./mvnw package
+ ---> Running in 6903f64ff4ed
+
+......
+
+[INFO] Total time:  36.515 s
+[INFO] Finished at: 2020-07-19T17:48:23Z
+[INFO] ------------------------------------------------------------------------
+Removing intermediate container 6903f64ff4ed
+ ---> 28cb050abd4c
+Step 5/6 : EXPOSE 8080
+ ---> Running in a305ddff2d38
+Removing intermediate container a305ddff2d38
+ ---> d11ab7345911
+Step 6/6 : CMD ["java", "-jar", "./target/docker-example-1.1.3.jar"]
+ ---> Running in 439a414e57df
+Removing intermediate container 439a414e57df
+ ---> 7793126f84f6
+Successfully built 7793126f84f6
+Successfully tagged javadoc:latest
+
+(base) $ docker run -p 8080:8080 -it --name javad javadoc
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.3.RELEASE)
+
+...
+2020-07-19 17:56:16.701  INFO 1 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+
+```
+
+# Exercise 1.14
+
+Dockerfiles: ./exec-1.14/Dockerfile & Dockerfile-back
+
+![Image of exercise 1.14](exec-1.14/pic-1.14.png)
+
+```bash
+(base) $ docker build -t rubys .
+Sending build context to Docker daemon  236.5kB
+Step 1/8 : FROM ruby:2.6.0
+ ---> ef8778f370d5
+Step 2/8 : RUN gem install bundler
+ ---> Using cache
+ ---> 1e2667a622ca
+Step 3/8 : EXPOSE 3000
+ ---> Using cache
+ ---> 95d026681b4b
+Step 4/8 : COPY . .
+ ---> 72c0afbd1b65
+Step 5/8 : RUN bundle install
+ ---> Running in 5244f5ec8bc5
+....
+Removing intermediate container 347de9c902b7
+ ---> 054c8b1dc3b2
+Step 7/8 : RUN rails db:migrate
+ ---> Running in 62b4679d8be7
+== 20190314120316 CreatePresses: migrating ====================================
+-- create_table(:presses)
+   -> 0.0008s
+== 20190314120316 CreatePresses: migrated (0.0016s) ===========================
+
+Removing intermediate container 62b4679d8be7
+ ---> 65193800f1a1
+Step 8/8 : CMD ["rails" ,"s" ]
+ ---> Running in efa696aae514
+Removing intermediate container efa696aae514
+ ---> 764a9d8de6b3
+Successfully built 764a9d8de6b3
+Successfully tagged rubys:latest
+(base) $ docker run -it -p 3000:3000 rubys
+=> Booting Puma
+=> Rails 5.2.2.1 application starting in development 
+=> Run `rails server -h` for more startup options
+Puma starting in single mode...
+* Version 3.12.0 (ruby 2.6.0-p0), codename: Llamas in Pajamas
+* Min threads: 5, max threads: 5
+* Environment: development
+* Listening on tcp://0.0.0.0:3000
+Use Ctrl-C to stop
+Started GET "/" for 172.17.0.1 at 2020-07-20 05:16:46 +0000
+....
+Completed 200 OK in 612ms (Views: 597.0ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/presses" for 172.17.0.1 at 2020-07-20 05:16:49 +0000
+....
+Redirected to http://localhost:3000/presses/new
+Completed 302 Found in 16ms (ActiveRecord: 6.4ms)
+
+
+^C- Gracefully stopping, waiting for requests to finish
+=== puma shutdown: 2020-07-20 05:19:26 +0000 ===
+- Goodbye!
+Exiting
+```
+
+# Exercise 1.15
+
+https://hub.docker.com/repository/docker/auuaa/fs-puhelinluettelo/
+
+
+# Exercise 1.16
+
+https://dockerfun.herokuapp.com/
