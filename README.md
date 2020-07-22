@@ -11,3 +11,5 @@ Course stuff
 
 
 ### Part 2
+
+1-3: 1h

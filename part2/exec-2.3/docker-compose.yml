@@ -1,0 +1,18 @@
+version: '3.5'
+
+services:
+
+  backend:
+      build: ./backend-example-docker
+      environment:
+        - NODE_ENV='production'
+      ports: 
+        - 8000:8000
+
+
+  frontend:
+      build: ./frontend-example-docker
+      environment:
+        - NODE_ENV='production'
+      ports: 
+        - 5000:5000
