@@ -64,4 +64,40 @@ backend_1   | Started on port 8000
 frontend_1  | INFO: Accepting connections at http://localhost:5000
 ```
 
+# Exercise 2.4
+
+![Image of exercise 2.4](exec-2.4/pic-2.4.png)
+
+```bash
+(base) $ docker-compose up -d --scale compute=4
+Starting calculator                 ... done
+Starting load-balancer              ... done
+Starting scaling-exercise_compute_1 ... done
+Creating scaling-exercise_compute_2 ... done
+Creating scaling-exercise_compute_3 ... done
+Creating scaling-exercise_compute_4 ... done
+```
+
+# Exercise 2.5
+
+Docker-compose: [docker-compose 2.5](./exec-2.5/docker-compose.yaml)
+
+![Image of exercise 2.5](exec-2.5/pic-2.5.png)
+
+```bash
+backend_1   | Got from redis pong
+```
+
+# Exercise 2.6
+
+Docker-compose: [docker-compose 2.6](./exec-2.6/docker-compose.yaml)
+
+![Image of exercise 2.6](exec-2.6/pic-2.6.png)
+
+```bash
+backend_1   | Executing (default): INSERT INTO "messages" ("id","body","createdAt","updatedAt") VALUES (DEFAULT,$1,$2,$3) RETURNING *;
+backend_1   | Executing (default): INSERT INTO "messages" ("id","body","createdAt","updatedAt") VALUES (DEFAULT,$1,$2,$3) RETURNING *;
+backend_1   | Executing (default): SELECT "id", "body", "createdAt", "updatedAt" FROM "messages" AS "message";
+backend_1   | Got from redis pong
+```
 

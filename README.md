@@ -13,3 +13,4 @@ Course stuff
 ### Part 2
 
 1-3: 1h
+4-6: 2 h
