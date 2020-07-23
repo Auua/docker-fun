@@ -1,0 +1,44 @@
+version: '3.5'
+
+services:
+
+  backend:
+      build: ./backend-example-docker
+      environment:
+        - REDIS=redis
+        - REDIS_PORT=6379
+        - DB_USERNAME=usr
+        - DB_PASSWORD=salasana
+        - DB_NAME=data
+        - DB_HOST=db
+      ports: 
+        - 8000:8000
+      depends_on:
+        - redis
+        - db
+      restart: 
+        unless-stopped
+
+  redis:
+      image: redis
+      hostname: redis
+      restart: 
+        unless-stopped
+      ports: 
+        - 6379
+
+  db:
+      image: postgres
+      restart: unless-stopped
+      environment:
+        - POSTGRES_USER=usr
+        - POSTGRES_PASSWORD=salasana
+        - POSTGRES_DB=data
+      container_name: db_postgres
+
+  frontend:
+      build: ./frontend-example-docker
+      environment:
+        - NODE_ENV='production'
+      ports: 
+        - 5000:5000
