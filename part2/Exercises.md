@@ -101,3 +101,22 @@ backend_1   | Executing (default): SELECT "id", "body", "createdAt", "updatedAt"
 backend_1   | Got from redis pong
 ```
 
+# Exercise 2.7
+
+Docker-compose: [docker-compose 2.7](./exec-2.7/docker-compose.yaml)
+
+# Exercise 2.8
+
+Docker-compose: [docker-compose 2.8](./exec-2.8/docker-compose.yaml)
+
+# Exercise 2.9
+
+Docker-compose: [docker-compose 2.9](./exec-2.9/docker-compose.yaml)
+
+# Exercise 2.10
+
+![Image of exercise 2.10](exec-2.10/pic-2.10.png)
+
+Docker-compose: [docker-compose 2.10](./exec-2.10/docker-compose.yaml)
+
+all the environment variables are moved to docker-compose file and pointing to correct (proxy) urls
